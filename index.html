@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Mass Reporter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Mass Reporter</h1>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <small><a href="#" id="enable-tests" style="color: #999; text-decoration: none;">Enable Tests</a></small>
+        </div>
+        
+        <!-- Username input section -->
+        <div class="input-section">
+            <label for="username">Instagram username (required)</label>
+            <input type="text" id="username" placeholder="Enter Instagram username (with or without @)" aria-required="true" title="You can type the username with or without a leading @. We'll clean it for you.">
+            <div class="help-text">You can type the username with or without a leading @. We'll clean it for you.</div>
+            <div class="normalized-username" id="normalized-username" style="display: none;"></div>
+            <div class="error-message" id="username-error"></div>
+        </div>
+        
+        <!-- Categories section -->
+        <div class="categories-section">
+            <h2>Report Categories</h2>
+            <div class="categories-list" id="categories-list">
+                <!-- Categories will be dynamically generated here -->
+            </div>
+        </div>
+        
+        <!-- Global controls -->
+        <div class="global-controls">
+            <div class="total-reports">Total reports: <span id="total-reports-count">0</span></div>
+            <button id="preview-button" class="button">Preview & Summary</button>
+        </div>
+        
+        <!-- Summary modal -->
+        <div class="modal" id="summary-modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-modal">&times;</span>
+                <h2>Report Summary</h2>
+                <div id="summary-content"></div>
+                <div class="consent-checkbox">
+                    <input type="checkbox" id="consent-checkbox">
+                    <label for="consent-checkbox">I understand these reports will be submitted to Instagram and I confirm the target account violates Instagram policies.</label>
+                </div>
+                <div class="modal-buttons">
+                    <button id="cancel-button" class="button secondary">Cancel</button>
+                    <button id="confirm-button" class="button primary" disabled>Confirm & Send</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results section -->
+        <div class="results-section" id="results-section" style="display: none;">
+            <h2>Results</h2>
+            <div class="results-content" id="results-content"></div>
+            <div class="processing-status">
+                <div class="progress-bar">
+                    <div class="progress" id="progress-bar"></div>
+                </div>
+                <div class="status-text" id="status-text"></div>
+            </div>
+        </div>
+        
+        <!-- Test section (hidden by default) -->
+        <div class="test-section" id="test-section" style="display: none;">
+            <h2>Username Sanitization Tests</h2>
+            <button id="run-tests" class="button">Run Tests</button>
+            <div id="test-results"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "massreporter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Instagram Mass Reporter demo with username sanitization",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2"
+  }
+}
